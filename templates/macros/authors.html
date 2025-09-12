@@ -1,0 +1,17 @@
+{% macro authors() %}
+    {% for author in page.extra.authors %}
+        {% if not loop.last %}
+        {% if author == config.extra.author %} 
+            <strong>{{ author }}</strong>,
+        {% else %}
+            {{ author }},
+        {% endif %}
+        {% elif loop.last %}
+        {% if author == config.extra.author %} 
+            <strong>{{ author }}</strong>
+        {% else %}
+            {{ author }}
+        {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}

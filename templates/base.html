@@ -1,0 +1,81 @@
+{% import "macros/social_icons.html" as macros %}
+{% import "macros/pub_icons.html" as icons %}
+{% import "macros/citation.html" as citation %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noai, noimageai">
+  <title>{{ config.title }}</title>
+  <meta name="description" content="{{ config.description }}">
+  {% if current_url %}
+  <link rel="canonical" href="{{ current_url | default(value='/') }}" />
+  {% endif %}
+
+  {% block favicons %}
+    {% if config.extra.favicon.webmanifest %}
+    <link  rel="manifest" href='{{ config.extra.favicon.webmanifest }}'>
+    {% endif %}
+    {% if config.extra.favicon.safari_pinned_tab %}
+    <link rel="mask-icon" color="#5bbad5" href='{{ config.extra.favicon.safari_pinned_tab }}'>
+    {% endif %}
+    {% if config.extra.favicon.favicon_16x16 %}
+    <link rel="icon" sizes="16x16" type="image/png" href='{{ config.extra.favicon.favicon_16x16 }}'>
+    {% endif %}
+    {% if config.extra.favicon.favicon_32x32 %}
+    <link rel="icon" sizes="32x32" type="image/png" href='{{ config.extra.favicon.favicon_32x32 }}'>
+    {% endif %}
+    {% if config.extra.favicon.apple_touch_icon %}
+    <link rel="apple-touch-icon" sizes="180x180" href='{{ config.extra.favicon.apple_touch_icon }}'>
+    {% endif %}
+  {% endblock %}
+
+  {% block rss %}
+    <link rel="alternate" type="application/atom+xml" title="All Feed" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+    <link rel="alternate" type="application/atom+xml" title="Publications" href="{{ get_url(path="publications/atom.xml", trailing_slash=false) }}">
+    <link rel="alternate" type="application/atom+xml" title="Talks" href="{{ get_url(path="talks/atom.xml", trailing_slash=false) }}">
+    <link rel="alternate" type="application/atom+xml" title="Teaching" href="{{ get_url(path="teaching/atom.xml", trailing_slash=false) }}">
+    {% endblock %}
+    <meta name="generator" content="Zola v.0.18">
+    {% block css %}
+    <link rel="stylesheet" href="{{ get_url(path="css/style.css", trailing_slash=false) }}">
+    <link rel="stylesheet" href="{{ get_url(path="js/katex/katex.min.css", trailing_slash=false) }}">
+    {% endblock css %}
+</head>
+
+<body>
+  <a href="#skip" class="visually-hidden">Skip to main content</a>
+  {% block header %}
+  {% include "partials/header.html" %}
+  {% endblock %}
+  <main id="skip" class="section">
+    {% block content %} {% endblock %}
+  </main>
+  {% block footer %}
+  {% include "partials/footer.html" %}
+  {% endblock %}
+  
+  <!-- KaTeX JavaScript and Auto-render -->
+  <script src="{{ get_url(path="js/katex/katex.min.js", trailing_slash=false) }}"></script>
+  <script src="{{ get_url(path="js/katex/contrib/auto-render.min.js", trailing_slash=false) }}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\[", right: "\\]", display: true},
+          {left: "\\(", right: "\\)", display: false}
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
+  
+  <!-- Local Search -->
+  <script src="{{ get_url(path="js/search.js", trailing_slash=false) }}"></script>
+</body>
+
+</html>

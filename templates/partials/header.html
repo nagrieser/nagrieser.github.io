@@ -1,0 +1,28 @@
+<header>
+    <div class="header-container">
+        <nav class="menu">
+            <ul class="nav">
+                {% set menu_items = config.extra.navbar_items -%}
+                {% for item in menu_items -%}
+                {%- if item.name != "Search" -%}
+                <li class="nav-item">
+                    <a href="{% if item.name == "Blog"%} {{ item.url }} {% else %} {{ config.base_url ~ item.url  }} {% endif %}" 
+                    {%if item.url == current_path %} aria-current="page" {% endif %}>{{ item.name }}
+                    </a>
+                </li>
+                {%- endif -%}
+                {% endfor -%}
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="search" 
+                   id="search-input" 
+                   class="search-input" 
+                   placeholder="Search..." 
+                   autocomplete="off"
+                   aria-label="Search">
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </div>
+</header>
+

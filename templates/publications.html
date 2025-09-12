@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+  <section>
+    <h1 class="title">
+      {{ section.title }}
+    </h1>
+      {% for year, publications in paginator.pages | group_by(attribute="year") %}
+          <h2>{{ year }}</h2>
+        <ul class="publist">
+          {% for page in publications %}
+          <li class="publist-item">
+            {% for author in page.taxonomies.authors %}
+                {% if not loop.last %}
+                {% if author == config.extra.author %}
+                    <strong><a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a></strong>,
+                {% else %}
+                    <a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a>,
+                {% endif %}
+                {% elif loop.last %}
+                {% if author == config.extra.author %}
+                    <strong><a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a></strong>
+                {% else %}
+                    <a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a>
+                {% endif %}
+                {% endif %}
+            {% endfor %}
+            (<time>{{ year }}</time>) -
+            <a href="{{ page.permalink | safe }}"> {% if page.extra.display_title %}{{ page.extra.display_title | safe }}{% else %}{{ page.title }}{% endif %}</a>
+            <ul class="publist-links">
+              {% for link in page.extra.links %}
+              {% if link.url is containing("github.com") and link.name != "Dataset" %}
+                {% set icon_name = "github" %}
+              {% elif link.url is containing("codeberg.org") and link.name != "Dataset" %}
+                {% set icon_name = "codeberg" %}
+              {% elif link.url is containing("forgejo") and link.name != "Dataset" %}
+                {% set icon_name = "forgejo" %}
+              {% elif link.url is ending_with(".pdf")%}
+                {% set icon_name = "text" %}
+              {% else %}
+                {% set icon_name = link.icon %}
+              {% endif %}
+              {# replace url path for local files #}
+              {% if link.name == "Self-archived PDF" and link.url is ending_with(".pdf")%}
+                  {% set url = page.permalink ~ link.url %}
+              {% else %}
+                  {% set url = link.url %}
+              {% endif %}
+                <li><a href="{{ url }}">{{icons::render_icon(icon=icon_name)}}{{ link.name }}</a></li>
+                {% if link.name == "DOI" and link.url is defined %}
+                  <li><a href="https://www.zotero.org/save?type=doi&q={{ link.url }}">{{icons::render_icon(icon="zotero")}}Add to Zotero</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+  </section>
+  {% if paginator.next or paginator.previous %}
+    <nav class="pagination-nav">
+        {% if paginator.previous %}
+            <div class="pagination-nav-item">
+              <a href="{{ paginator.previous }}" class="pagination-nav-arrow">← Previous</a>
+            </div>
+        {% endif %}
+        {% if paginator.next %}
+            <div class="pagination-nav-item">
+              <a href="{{ paginator.next }}" class="pagination-nav-arrow">Next →</a>
+            </div>
+        {% endif %}
+    </nav>
+  {% endif %}
+</article>
+{% endblock content %}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for entry in entries -%}
+    {% if not entry.permalink is containing("/authors/") and not entry.permalink is containing("/publications/") -%}
+    <url>
+        <loc>{{ entry.permalink }}</loc>
+        {% if entry.updated -%}
+        <lastmod>{{ entry.updated }}</lastmod>
+        {% endif -%}
+    </url>
+    {% endif -%}
+{% endfor -%}
+    <!-- Custom URLs not managed by Zola -->
+    <url>
+        <loc>https://melashri.net/ROOT</loc>
+        <lastmod>{{ now() | date(format="%Y-%m-%d") }}</lastmod>
+    </url>
+    <url>
+        <loc>https://melashri.net/time</loc>
+        <lastmod>{{ now() | date(format="%Y-%m-%d") }}</lastmod>
+    </url>
+    <url>
+        <loc>https://melashri.net/hep-jobs</loc>
+        <lastmod>{{ now() | date(format="%Y-%m-%d") }}</lastmod>
+    </url>
+    <url>
+        <loc>https://melashri.net/arxiv</loc>
+        <lastmod>{{ now() | date(format="%Y-%m-%d") }}</lastmod>
+    </url>
+    <url>
+        <loc>https://melashri.net/grender</loc>
+        <lastmod>{{ now() | date(format="%Y-%m-%d") }}</lastmod>
+    </url>
+    <url>
+        <loc>https://melashri.net/nrepo</loc>
+        <lastmod>{{ now() | date(format="%Y-%m-%d") }}</lastmod>
+    </url>
+    <url>
+        <loc>https://melashri.net/sanitext</loc>
+        <lastmod>{{ now() | date(format="%Y-%m-%d") }}</lastmod>
+    </url>
+</urlset>

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% import "macros/pub_icons.html" as icons %}
+
+{% block content %}
+<article>
+  <section>
+    <h1 class="title">
+      {% if section.extra.display_title %}{{ section.extra.display_title }}{% else %}{{ section.title }}{% endif %}
+    </h1>
+    
+    {% if section.content %}
+    <div class="section-description">
+      {{ section.content | safe }}
+    </div>
+    {% endif %}
+
+    {% if section.pages %}
+    <div class="projects-grid">
+      {% for page in section.pages %}
+      <div class="project-card">
+        <div class="project-content">
+          <h3 class="project-title">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+          </h3>
+          
+          {% if page.extra.category %}
+          <div class="project-category">{{ page.extra.category }}</div>
+          {% endif %}
+          
+          {% if page.summary %}
+          <p class="project-summary">{{ page.summary }}</p>
+          {% elif page.description %}
+          <p class="project-summary">{{ page.description }}</p>
+          {% endif %}
+          
+          {% if page.extra.technologies %}
+          <div class="project-technologies">
+            {% for tech in page.extra.technologies %}
+            <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          
+          {% if page.extra.status %}
+          <div class="project-status status-{{ page.extra.status | lower }}">
+            {{ page.extra.status }}
+          </div>
+          {% endif %}
+          
+          {% if page.extra.links %}
+          <div class="project-links">
+          {% for link in page.extra.links %}
+          {% if link.url is containing("github.com") %}
+            {% set icon_name = "github" %}
+          {% elif link.url is containing("codeberg.org") %}
+            {% set icon_name = "codeberg" %}
+          {% elif link.url is containing("forgejo") %}
+            {% set icon_name = "forgejo" %}
+          {% elif link.url is ending_with(".pdf") %}
+            {% set icon_name = "text" %}
+          {% else %}
+            {% set icon_name = link.icon | default(value="external-link") %}
+          {% endif %}            <a href="{{ link.url }}" class="project-link" {% if link.external %}target="_blank" rel="noopener"{% endif %}>
+              {{ icons::render_icon(icon=icon_name) }}
+              {{ link.name }}
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p>No projects found. Check back soon!</p>
+    {% endif %}
+  </section>
+</article>
+{% endblock content %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="pub-container">
+    <h1>{{ page.title }}</h1>
+    <ul class="pub-buttons">
+        {% for link in page.extra.links %}
+        {# export global variables to use in the page #}
+        {% if link.name == "Website" and link.url is defined %}
+            {% set_global website_link = link.url %}
+        {% endif %}
+        {% if link.url is containing("github.com")%}
+        {% set icon_name = "github" %}
+        {% elif link.url is containing("codeberg.org")%}
+        {% set icon_name = "codeberg" %}
+        {% elif link.url is containing("forgejo")%}
+        {% set icon_name = "forgejo" %}
+        {% else %}
+        {% set icon_name = link.icon %}
+        {% endif %}
+        <li><a href="{{ link.url }}">{{icons::render_icon(icon=icon_name)}}{{ link.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <ul class="pub-metadata">
+        <li><strong>Supervisor(s)</strong>: 
+        {% for author in page.taxonomies.authors %} 
+        <a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a>
+        {% endfor %} </li>
+        <li><strong>Start Date</strong>: <time datetime="{{ page.extra.start_date }}">{{ page.extra.start_date }}</time></li>
+        <li><strong>End Date</strong>: <time datetime="{{ page.extra.end_date }}">{{ page.extra.end_date }}</time></li>
+        {% if website_link %}
+        <li><strong>Website</strong>: <a href="{{website_link}}">{{website_link}}</a> </li>
+        {% endif %}
+        <li><strong>Language</strong>: <i>{{page.extra.language}}</i> </li>
+        <li><strong>Tags</strong>: 
+            {% for tag in page.taxonomies.tags %} 
+                {% if not loop.last %}
+                    <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="pub-tag">{{ tag }}</a>,
+                {% elif loop.last %}
+                    <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="pub-tag">{{ tag }}</a> 
+                {% endif %}
+            {% endfor %}
+        </li>
+    </ul>
+    <article>
+        {% if page.extra.abstract %} 
+            {{ page.extra.abstract }}
+        {% endif %}
+        {%- if page.extra.url_slides %}
+            <p class="notice">Click on the <strong>Slides</strong> button above to view the revealjs presentation.</p>
+        {%- endif %}
+        {{ page.content | safe }}
+        {% if page.lower or page.higher %}
+            <nav class="page-nav">
+            {% if page.higher %}
+                <a class="page-nav-item" href="{{ page.higher.permalink }}">
+                    <div class="nav-arrow">← Previous</div>
+                    <span class="page-title">{{ page.higher.title }}</span>
+                </a>
+            {% endif %}
+            {% if page.lower %}
+                <a class="page-nav-item" href="{{ page.lower.permalink }}">
+                    <div class="nav-arrow">Next →</div>
+                    <span class="page-title">{{ page.lower.title }}</span>
+                </a>
+            {% endif %}
+            </nav>
+        {% endif %}
+    </article>
+</article>
+{% endblock content %}

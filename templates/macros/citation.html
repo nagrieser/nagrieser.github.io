@@ -1,0 +1,6 @@
+{% macro bibpath(page) -%}
+{% for asset in page.assets -%}
+  {% if asset is ending_with("bib") -%}{{asset}}{% break -%}{% endif -%}
+{% endfor -%}
+{% endmacro -%}
+

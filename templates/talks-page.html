@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="pub-container">
+    <h1>{{ page.title }}</h1>
+    <ul class="pub-buttons">
+        {% for link in page.extra.links %}
+            {% if link.url is containing("github.com")%}
+                {% set icon_name = "github" %}
+            {% elif link.url is containing("codeberg.org")%}
+                {% set icon_name = "codeberg" %}
+            {% elif link.url is containing("forgejo")%}
+                {% set icon_name = "forgejo" %}
+            {% else %}
+                {% set icon_name = link.icon %}
+            {% endif %}
+            {% if link.name == "Slides" and link.url is ending_with(".html") %}
+                {% set name = link.name ~ " (HTML)" %}
+            {% elif link.name == "Slides" and link.url is ending_with(".pdf") %}
+                {% set name = link.name ~ " (PDF)" %}
+            {% else %}
+                {% set name = link.name %}
+            {% endif %}
+            {% if link.legacy_url is defined %}
+                <li><a href="{{ get_url(path="slides", trailing_slash=true) ~ link.url }}">{{icons::render_icon(icon=icon_name)}}{{ name }}</a></li>
+            {% elif link.url is ending_with(".html") or link.url is ending_with(".pdf") %}
+                <li><a href="{{ page.permalink ~ link.url }}">{{icons::render_icon(icon=icon_name)}}{{ name }}</a></li>
+            {% else %}
+                <li><a href="{{ link.url }}">{{icons::render_icon(icon=icon_name)}}{{ name }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <ul class="pub-metadata">
+        <li><strong>Speaker(s)</strong>: 
+            {% for author in page.taxonomies.authors %} 
+            <a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a>
+            {% endfor %} 
+        </li>
+        <li><strong>Date</strong>: <time datetime="{{ page.date }}">{{ page.date }}</time></li>
+        <li><strong>Event</strong>: {{page.extra.event}} </li>
+        <li><strong>Location</strong>: {{page.extra.location}} </li>
+        <li><strong>Tags</strong>: 
+            {% for tag in page.taxonomies.tags %} 
+                {% if not loop.last %}
+                   <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="pub-tag">{{ tag }}</a>,
+                {% elif loop.last %}
+                    <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="pub-tag">{{ tag }}</a>
+                {% endif %}
+            {% endfor %}
+        </li>
+    </ul>
+    <article>
+        {% if page.extra.abstract %} 
+            {{ page.extra.abstract }}
+        {% endif %}
+        {%- if page.extra.url_slides %}
+            <p class="notice">
+                {% if page.extra.url_slides is ending_with(".html") %}
+                Click on the <strong>Slides</strong> button above to view the revealjs presentation.
+                {% elif page.extra.url_slides is ending_with(".pdf") %}
+                Click on the <strong>Slides</strong> button above to view the pdf presentation.
+                {% else %}
+                Click on the <strong>Slides</strong> button above to view the interactive presentation.
+                {% endif %}
+                </p>
+        {%- endif %}
+        {{ page.content | safe }}
+        {% if page.lower or page.higher %}
+            <nav class="page-nav">
+            {% if page.higher %}
+                <a class="page-nav-item" href="{{ page.higher.permalink }}">
+                    <div class="nav-arrow">← Previous</div>
+                    <span class="page-title">{{ page.higher.title }}</span>
+                </a>
+            {% endif %}
+            {% if page.lower %}
+                <a class="page-nav-item" href="{{ page.lower.permalink }}">
+                    <div class="nav-arrow">Next →</div>
+                    <span class="page-title">{{ page.lower.title }}</span>
+                </a>
+            {% endif %}
+            </nav>
+        {% endif %}
+    </article>
+</article>
+{% endblock content %}

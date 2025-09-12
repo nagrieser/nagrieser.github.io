@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% set bibtex_path = citation::bibpath(page=page) -%}
+{% if bibtex_path -%}
+{% set plaintex = load_data(path=bibtex_path, required=false, format="plain") -%}
+{% endif -%}
+
+<article class="pub-container">
+    <h1>{% if page.extra.display_title %}{{ page.extra.display_title | safe }}{% else %}{{ page.title }}{% endif %}</h1>
+    <ul class="pub-buttons">
+        {% for link in page.extra.links %}
+            {# export global variables to use in the page #}
+            {% if link.name == "DOI" and link.url is defined %}
+                {% set_global doi_link = link.url %}
+            {% endif %}
+            {# change icon depending on the forge #}
+            {% if link.url is containing("github.com") and link.name != "Dataset" %}
+                {% set icon_name = "github" %}
+            {% elif link.url is containing("codeberg.org") and link.name != "Dataset" %}
+                {% set icon_name = "codeberg" %}
+            {% elif link.url is containing("forgejo") and link.name != "Dataset" %}
+                {% set icon_name = "forgejo" %}
+            {% elif link.url is ending_with(".pdf")%}
+                {% set icon_name = "text" %}
+            {% else %}
+                {% set icon_name = link.icon %}
+            {% endif %}
+            {# replace url path for local files #}
+            {% if link.name == "Self-archived PDF" and link.url is ending_with(".pdf")%}
+                {% set url = page.permalink ~ link.url %}
+            {% else %}
+                {% set url = link.url %}
+            {% endif %}
+            <li><a href="{{ url }}">{{icons::render_icon(icon=icon_name)}}{{ link.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <ul class="pub-metadata">
+        <li><strong>Authors</strong>: 
+            {% for author in page.taxonomies.authors %} 
+                {% if not loop.last %}
+                   <a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a>,
+                {% elif loop.last %}
+                    <a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a>
+                {% endif %}
+            {% endfor %} 
+        </li>
+        <li><strong>Published</strong>: <time datetime="{{ page.date }}">{{ page.date }}</time></li>
+        <li><strong>Type</strong>: {{page.extra.publication_type}} </li>
+        <li><strong>Publication</strong>: {{page.extra.publication}} </li>
+        <li><strong>Tags</strong>: 
+            {% for tag in page.taxonomies.tags %} 
+                {% if not loop.last %}
+                    <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="pub-tag">{{ tag }}</a>,
+                {% elif loop.last %}
+                    <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="pub-tag">{{ tag }}</a> 
+                {% endif %}
+            {% endfor %}
+        </li>
+    </ul>
+    <article> 
+        {% if page.extra.abstract %} 
+            {{ page.extra.abstract }}
+        {% endif %}
+        {{ page.content | safe }}
+          {% if plaintex -%}
+            <section>
+                <p><strong>Bibtex</strong></p>
+                <pre class="bib-data"><code class="select-all">{{ plaintex | safe }}</code></pre>
+                {% if doi_link %}
+                <p class="doi-link"><a href="{{ doi_link }}">Add to zotero{{icons::render_icon(icon="arrow-up")}}</a></p>
+                {% endif %}
+            </section>
+            {% endif -%}
+        {% if page.lower or page.higher %}
+            <nav class="page-nav">
+            {% if page.higher %}
+                <a class="page-nav-item" href="{{ page.higher.permalink }}">
+                    <div class="nav-arrow">← Previous</div>
+                    <span class="page-title">{{ page.higher.title }}</span>
+                </a>
+            {% endif %}
+            {% if page.lower %}
+                <a class="page-nav-item" href="{{ page.lower.permalink }}">
+                    <div class="nav-arrow">Next →</div>
+                    <span class="page-title">{{ page.lower.title }}</span>
+                </a>
+            {% endif %}
+            </nav>
+        {% endif %}
+    </article>
+</article>
+
+{% endblock content %}

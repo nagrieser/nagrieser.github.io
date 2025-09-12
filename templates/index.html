@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col col-lg-4">
+        <div id="profile">
+          {% set image = resize_image(path=config.extra.avatar, format="webp", width=220, height=220) %}
+           <picture>
+             <img class="avatar" src="{{ image.url }}" alt="Half-body image of Andrea Titolo" width=220 height=220>
+           </picture>
+          <div>
+            <h2>{{ config.author }}</h2>
+            <h3>{{ config.extra.role }}</h3>
+            <h3>{{ config.extra.institution }}</h3>
+          </div>
+          <ul class="network">            
+              {{macros::render_social_icons()}}
+          </ul>
+        </div>
+      </div>
+      <div class="col col-lg-8">
+          <article id="bio">
+            <h1>About</h1>
+            {{section.content | safe }}
+          </article>
+          <div class="row" id="background">
+            <div class="col col-md-5" id="interests">
+              <h2>Interests</h2>
+              <ul>
+                {% set interests_items = config.extra.interests_items -%}
+                {% for item in interests_items -%}
+                <li>{{ item.name }}</li>
+                {% endfor -%}
+              </ul>
+            </div>
+            <div class="col col-md-7" id="education">
+              <h2>Education</h2>
+              <ul>
+                {% set education_items = config.extra.education_items -%}
+                {% for item in education_items -%}
+                <li>
+                  <div>
+                    <p class="course">{{ item.course }}, {{ item.year }}</p>
+                    <p class="institution">{{ item.institution }}</p>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

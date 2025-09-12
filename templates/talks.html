@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <article>
+    <section>
+      <h1 class="title">
+        {{ section.title }}
+      </h1>
+      {% for year, talks in paginator.pages | group_by(attribute="year") %}
+          <h2>{{ year }}</h2>
+        <ul class="publist">
+          {% for page in talks %}
+          <li class="publist-item">
+            {% for author in page.taxonomies.authors %}
+              {% if author == config.extra.author %}
+                <strong><a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a></strong>
+              {% else %}
+                <a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a>
+              {% endif %}
+            {% endfor %}
+            - <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+          <p> <time datetime="{{ page.date }}">{{ page.date }}</time> - {{ page.extra.location }}</p>
+              <ul class="publist-links">
+                {% for link in page.extra.links %}
+                {% if link.url is containing("github.com")%}
+                {% set icon_name = "github" %}
+                {% elif link.url is containing("codeberg.org")%}
+                {% set icon_name = "codeberg" %}
+                {% elif link.url is containing("forgejo")%}
+                {% set icon_name = "forgejo" %}
+                {% else %}
+                {% set icon_name = link.icon %}
+                {% endif %}
+                {% if link.name == "Slides" and link.url is ending_with(".html") %}
+                  {% set name = link.name ~ " (HTML)" %}
+                {% elif link.name == "Slides" and link.url is ending_with(".pdf") %}
+                  {% set name = link.name ~ " (PDF)" %}
+                {% else %}
+                  {% set name = link.name %}
+                {% endif %}
+                {% if link.legacy_url is defined %}
+                    <li><a href="{{ get_url(path="slides", trailing_slash=true) ~ link.url }}">{{icons::render_icon(icon=icon_name)}}{{ name }}</a></li>
+                {% elif link.url is ending_with(".html") or link.url is ending_with(".pdf") %}
+                    <li><a href="{{ page.permalink ~ link.url }}">{{icons::render_icon(icon=icon_name)}}{{ name }}</a></li>
+                {% else %}
+                    <li><a href="{{ link.url }}">{{icons::render_icon(icon=icon_name)}}{{ name }}</a></li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </section>
+    {% if paginator.next or paginator.previous %}
+    <nav class="pagination-nav">
+        {% if paginator.previous %}
+            <div class="pagination-nav-item">
+              <a href="{{ paginator.previous }}" class="pagination-nav-arrow">← Previous</a>
+            </div>
+        {% endif %}
+        {% if paginator.next %}
+            <div class="pagination-nav-item">
+              <a href="{{ paginator.next }}" class="pagination-nav-arrow">Next →</a>
+            </div>
+        {% endif %}
+    </nav>
+    {% endif%}
+  </article>
+{% endblock content %}

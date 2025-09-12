@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% import "macros/pub_icons.html" as icons %}
+
+{% block content %}
+<article>
+  <div class="project-page-container">
+    <header class="project-header">
+      <h1 class="project-title">
+        <a href="{{ page.permalink }}">{{ page.title }}</a>
+      </h1>
+
+      {% if page.extra.category %}
+      <div class="project-category">{{ page.extra.category }}</div>
+      {% endif %}
+      
+      {% if page.extra.status %}
+      <div class="project-status status-{{ page.extra.status | lower }}">
+        {{ page.extra.status }}
+      </div>
+      {% endif %}
+      
+      {% if page.date %}
+      <div class="project-date">
+        <time datetime="{{ page.date }}">{{ page.date | date(format="%B %Y") }}</time>
+      </div>
+      {% endif %}
+    </header>
+
+    {% if page.extra.links %}
+    <div class="project-links-header">
+      {% for link in page.extra.links %}
+      {% if link.url is containing("github.com") %}
+        {% set icon_name = "github" %}
+      {% elif link.url is containing("codeberg.org") %}
+        {% set icon_name = "codeberg" %}
+      {% elif link.url is containing("forgejo") %}
+        {% set icon_name = "forgejo" %}
+      {% elif link.url is ending_with(".pdf") %}
+        {% set icon_name = "text" %}
+      {% else %}
+        {% set icon_name = link.icon | default(value="external-link") %}
+      {% endif %}
+      
+      <a href="{{ link.url }}" class="project-link primary" {% if link.external %}target="_blank" rel="noopener"{% endif %}>
+        {{ icons::render_icon(icon=icon_name) }}
+        {{ link.name }}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if page.extra.technologies %}
+    <div class="project-technologies-header">
+      <h3>Technologies Used</h3>
+      <div class="tech-tags">
+        {% for tech in page.extra.technologies %}
+        <span class="tech-tag">{{ tech }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="project-content">
+      {{ page.content | safe }}
+    </div>
+
+    {% if page.extra.collaborators %}
+    <div class="project-collaborators">
+      <h3>Collaborators</h3>
+      <ul>
+        {% for collaborator in page.extra.collaborators %}
+        <li>
+          {% if collaborator.url %}
+          <a href="{{ collaborator.url }}" target="_blank" rel="noopener">{{ collaborator.name }}</a>
+          {% else %}
+          {{ collaborator.name }}
+          {% endif %}
+          {% if collaborator.role %} - {{ collaborator.role }}{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <div class="project-navigation">
+      <a href="{{ get_url(path="projects/") }}" class="back-to-projects">← Back to Projects</a>
+    </div>
+  </div>
+</article>
+{% endblock content %}
