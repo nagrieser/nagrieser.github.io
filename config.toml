@@ -84,9 +84,9 @@ interests_items = [
 ]
 
 education_items = [
-    {course = "PhD in Particle Physics", institution = "Univerity of Oklahoma", year = "2020"},
-    {course = "MA in Particle Physics", institution = "University of Oklahoma", year = "2016"},
-    {course = "BA in Physics", institution = "Ohio Northern University", year = "2013"},
+    {course = "PhD in Experimental High Energy Physics", institution = "Univerity of Oklahoma", year = "2020"},
+    {course = "MA in Experimental High Energy Physics", institution = "University of Oklahoma", year = "2016"},
+    {course = "BS in Physics", institution = "Ohio Northern University", year = "2013"},
 ]
 
 [extra.favicon]
