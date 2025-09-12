@@ -74,8 +74,7 @@ navbar_items = [
     { url = "/contact/", name = "Contact" },
     { url = "/cv/", name = "CV" },
     { url = "/search/", name = "Search" },
-    { url = "/more/", name = "More.." },
-    { url = "https://blog.melashri.net", name = "Blog" }
+    { url = "/more/", name = "More.." }
 ]
 
 interests_items = [
