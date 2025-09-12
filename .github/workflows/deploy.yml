@@ -48,8 +48,8 @@ jobs:
       - name: Build with Zola
         run: |
           # Use custom domain for deployment
-          echo "Building for custom domain: https://melashri.net"
-          zola build --base-url "https://melashri.net"
+          echo "Building for custom domain: https://nagrieser.github.io"
+          zola build --base-url "https://nagrieser.github.io/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4.0.0
