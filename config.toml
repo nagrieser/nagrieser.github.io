@@ -2,13 +2,13 @@
 base_url = "https://nagrieser.github.io/"
 
 # The site title and description; used in feeds by default.
-title = "Mohamed Elashri"
-description = "Mohamed Elashri's Academic Website"
+title = "Nathan Grieser"
+description = "Nathan Grieser's Academic Website"
 # The default language, used in RSS
 default_language = "en"
 
 # The default author for pages
-author = "Mohamed Elashri"
+author = "Nathan Grieser"
 
 # For overriding the default output directory `public`, set it to another value (e.g.: "docs")
 output_dir = "public"
@@ -50,19 +50,17 @@ highlight_theme = "base16-ocean-dark"
 
 avatar = "img/me.jpeg"
 
-author = "M. Elashri"
+author = "N. Grieser"
 institution = "University of Cincinnati"
-role = "PhD Candidate"
-email = "info@elashri.com"
+role = "Postdoctoral Fellow"
+email = "ngrieser@cern.ch"
 
 footer_copyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
 social_buttons = [
-    {link = "mailto:info@elashri.com", name = "email"},
-    {link = "https://github.com/MohamedElashri", name = "github"},
-    {link = "https://orcid.org/0000-0001-9398-953X", name = "orcid"},
-    {link = "https://keybase.io/melashri", name = "keybase"},
-    {link = "https://linkedin.com/in/elashri", name = "linkedin"},
+    {link = "mailto:ngrieser@cern.ch", name = "email"},
+    {link = "https://gitlab.cern.ch/ngrieser", name = "gitlab"},
+    {link = "https://orcid.org/0000-0003-0386-4923", name = "orcid"},
 ]
 
 # trailing slashes are needed for the aria-current page in header.html to work
@@ -79,16 +77,16 @@ navbar_items = [
 
 interests_items = [
     {name = "Particle Physics"},
-    {name = "Hardware & Electronics"},
+    {name = "Precision Electroweak and Higgs"},
     {name = "Machine Learning"},
     {name = "Scientific Computing"},
 
 ]
 
 education_items = [
-    {course = "PhD in Particle Physics", institution = "Univerity of Cincinnati", year = "2026"},
-    {course = "MA in Particle Physics", institution = "University of Cincinnati", year = "2020"},
-    {course = "BA in Physics", institution = "Zewail University", year = "2018"},
+    {course = "PhD in Particle Physics", institution = "Univerity of Oklahoma", year = "2020"},
+    {course = "MA in Particle Physics", institution = "University of Oklahoma", year = "2016"},
+    {course = "BA in Physics", institution = "Ohio Northern University", year = "2013"},
 ]
 
 [extra.favicon]
