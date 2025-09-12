@@ -2,15 +2,7 @@
 title = "Links"
 +++
 
-Those are some links for different apects of my work. Just to keep up with them. Most of them are releated to my Collaboration and need login
-
-## Personal Pages 
-
-* **[Time](https://melashri.net/time)** - My HEP/life Time zone and cities. 
-* **[CERN shuttle](https://melashri.net/shuttle)** - CERN shuttle schedule (#2)
-* **[Daily arXiv](https://melashri.net/arxiv)** - My daily arXiv papers reading list
-* **[HEP Jobs Tracker](https://melashri.net/hep-jobs)** - Tracking Inspirehep HEP jobs in one place with search function
-* **[Mermaid Diagram Viewer](https://melashri.net/n-mermaid/)** - My simple Mermaid viewer (with PDF export)
+Those are some links for different apects of my work. Just to keep up with them. Most of them are releated to my Collaboration work and need login
 
 ## LHCb Links
 
