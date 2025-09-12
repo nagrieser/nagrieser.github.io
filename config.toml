@@ -48,7 +48,7 @@ highlight_theme = "base16-ocean-dark"
 [extra]
 # Put all your custom variables here
 
-avatar = "img/me.jpeg"
+avatar = "img/me.png"
 
 author = "N. Grieser"
 institution = "University of Cincinnati"
