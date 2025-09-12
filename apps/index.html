@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download free Mac apps by Mohamed Elashri to enhance your productivity. Discover apps like Open in iTerm2, Open in Sublime Text, and QuickFilesCreate.">
+    <meta property="og:title" content="Mac Apps by Mohamed Elashri">
+    <meta property="og:url" content="https://melashri.net/apps">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Explore and download free Mac apps by Mohamed Elashri to boost your productivity.">
+    <title>Mac Apps - Mohamed Elashri</title>    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --primary-color: #4a4a4a;
+            --secondary-color: #ffffff;
+            --border-color: #ddd;
+            --accent-color: #2E8B57;
+            --header-color: #34495e; /* New color for the header */
+        }
+
+        .dark-mode {
+            --bg-color: #2c2c2c;
+            --text-color: #f0f0f0;
+            --primary-color: #e91111;
+            --secondary-color: #3c3c3c;
+            --border-color: #555;
+            --accent-color: #50fa7b;
+            --header-color: #ff5555; /* Darker shade for header in dark mode */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800%;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .menu-bar {
+            background-color: var(--header-color);
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .menu-btn {
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--header-color);
+        }
+
+        #darkModeToggle {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        h1, h2 {
+            color: var(--accent-color);
+        }
+
+        h3 {
+            color: var(--primary-color);
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .app {
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-content {
+            flex-grow: 1;
+        }
+
+        .app a.download-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .app a.download-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        .app:hover {
+            transform: translateY(-5px);
+        }
+
+        .app h3 {
+            margin-top: 0;
+        }
+
+        .app p {
+            margin-bottom: 15px;
+        }
+
+        .app a {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .app a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .disclaimer {
+            font-size: 0.9em;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        footer {
+            text-align: center;
+            background: #222;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .app h2 img {
+            vertical-align: middle;
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+            display: inline-block; /* Ensure the image is displayed */
+        }
+
+        @media (max-width: 768px) {
+            .menu-bar {
+                padding: 10px;
+            }
+
+            .menu-btn {
+                padding: 8px 15px;
+                margin: 0 5px;
+            }
+
+            #darkModeToggle {
+                top: 5px;
+                right: 10px;
+                font-size: 1.2rem;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <a href="https://melashri.net" class="menu-btn">Home</a>
+        <a href="https://github.com/MohamedElashri" class="menu-btn">GitHub</a>
+        <button id="darkModeToggle">🌓</button>
+    </div>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Mac Apps by Mohamed Elashri</h2>
+            <p>Boost your productivity with these custom-built Mac applications. Designed for efficiency, these tools streamline your workflow and simplify daily tasks.</p>
+        </div>
+
+        <div class="app-grid">
+            <div class="app">
+                <div class="app-content">
+                    <h2>Open in iTerm2 
+                        <img src="icons/iTerm2.png" alt="Open in iTerm2 Icon" 
+                             onerror="console.error('Failed to load iTerm2 icon:', this.src); this.onerror=null; this.src='icons/default.png';">
+                    </h2>
+                    <p>Open in iTerm2 lets you quickly open the current Finder location in iTerm2 terminal app, saving you time and streamlining your workflow.</p>
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Quickly open Finder locations in iTerm2</li>
+                        <li>Seamless integration with Finder</li>
+                        <li>Simple installation and usage</li>
+                    </ul>
+                    <h3>How to Install:</h3>
+                    <ol>
+                        <li>Download the app using the button below.</li>
+                        <li>Unzip the file to get the app file.</li>
+                        <li>Hold the Command (⌘) key and drag the app file to your Finder toolbar.</li>
+                    </ol>
+                </div>
+                <a href="open_in_iterm2.zip" class="download-btn">Download Open in iTerm2 App</a>
+            </div>
+
+            <div class="app">
+                <div class="app-content">
+                    <h2>Open in Sublime Text 
+                        <img src="icons/sublime.png" alt="Open in Sublime Text Icon" 
+                             onerror="console.error('Failed to load Sublime Text icon:', this.src); this.onerror=null; this.src='icons/default.png';">
+                    </h2>
+                    <p>Open in Sublime Text enables you to quickly open the current Finder location or selected file in Sublime Text, enhancing your coding efficiency.</p>
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Instantly open files in Sublime Text from Finder</li>
+                        <li>Supports both files and directories</li>
+                        <li>Easy drag-and-drop installation</li>
+                    </ul>
+                    <h3>How to Install:</h3>
+                    <ol>
+                        <li>Download the app using the button below.</li>
+                        <li>Unzip the file to get the app file.</li>
+                        <li>Hold the Command (⌘) key and drag the app to your Finder toolbar.</li>
+                    </ol>
+                </div>
+                <a href="open_in_sublime.zip" class="download-btn">Download Open in Sublime Text App</a>
+            </div>
+
+            <div class="app">
+                <div class="app-content">
+                    <h2>QuickFilesCreate 
+                        <img src="icons/QuickCreateFile.png" alt="QuickFilesCreate Icon" 
+                             onerror="console.error('Failed to load QuickFilesCreate icon:', this.src); this.onerror=null; this.src='icons/default.png';">
+                    </h2>
+                    <p>QuickFilesCreate allows you to create new files quickly in the current directory from the Finder window, making file management a breeze.</p>
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Quick file creation in Finder</li>
+                        <li>Supports All file types</li>
+                        <li>Optional auto-open in your editor of choice</li>
+                        <li>Easy to use with simple drag-and-drop installation</li>
+                    </ul>
+                    <h3>How to Install:</h3>
+                    <ol>
+                        <li>Download the app using the button below.</li>
+                        <li>Unzip the file to get the app file.</li>
+                        <li>Hold the Command (⌘) key and drag the app to your Finder toolbar.</li>
+                    </ol>
+                </div>
+                <a href="QuickFileCreate.zip" class="download-btn">Download QuickFilesCreate App</a>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> These apps are provided as-is and do not have any internet connections. I assume no liability for any issues arising from their use.</p>
+        </div>
+        <footer>
+            <p>Contact me at <a href="mailto:mail@elashri.com" class="text-white">mail at elashri dot com</a> for support and inquiries.</p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+        });
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

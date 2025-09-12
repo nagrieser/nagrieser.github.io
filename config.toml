@@ -1,0 +1,100 @@
+# The URL the site will be built for
+base_url = "https://melashri.net"
+
+# The site title and description; used in feeds by default.
+title = "Mohamed Elashri"
+description = "Mohamed Elashri's Academic Website"
+# The default language, used in RSS
+default_language = "en"
+
+# The default author for pages
+author = "Mohamed Elashri"
+
+# For overriding the default output directory `public`, set it to another value (e.g.: "docs")
+output_dir = "public"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = false
+
+# When set to "true", a feed is automatically generated.
+generate_feeds = true
+
+# The filename to use for the feed. Used as the template filename, too.
+# Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
+# There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
+feed_filenames = ["atom.xml", "rss.xml"]
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+# Whether to generate a sitemap
+generate_sitemap = true
+
+taxonomies = [
+    { name = "tags", feed = true, paginate_by = 25 },
+    { name = "authors", feed = true, paginate_by = 25 },
+]
+
+[slugify]
+# Check if this is actually needed or not
+paths_keep_dates = true
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "base16-ocean-dark"
+
+[extra]
+# Put all your custom variables here
+
+avatar = "img/me.jpeg"
+
+author = "M. Elashri"
+institution = "University of Cincinnati"
+role = "PhD Candidate"
+email = "info@elashri.com"
+
+footer_copyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+
+social_buttons = [
+    {link = "mailto:info@elashri.com", name = "email"},
+    {link = "https://github.com/MohamedElashri", name = "github"},
+    {link = "https://orcid.org/0000-0001-9398-953X", name = "orcid"},
+    {link = "https://keybase.io/melashri", name = "keybase"},
+    {link = "https://linkedin.com/in/elashri", name = "linkedin"},
+]
+
+# trailing slashes are needed for the aria-current page in header.html to work
+navbar_items = [
+    { url = "/", name = "Home" },
+    { url = "/publications/", name = "Publications" },
+    { url = "/projects/", name = "Projects" },
+    { url = "/talks/", name = "Talks" },
+    { url = "/contact/", name = "Contact" },
+    { url = "/cv/", name = "CV" },
+    { url = "/search/", name = "Search" },
+    { url = "/more/", name = "More.." },
+    { url = "https://blog.melashri.net", name = "Blog" }
+]
+
+interests_items = [
+    {name = "Particle Physics"},
+    {name = "Hardware & Electronics"},
+    {name = "Machine Learning"},
+    {name = "Scientific Computing"},
+
+]
+
+education_items = [
+    {course = "PhD in Particle Physics", institution = "Univerity of Cincinnati", year = "2026"},
+    {course = "MA in Particle Physics", institution = "University of Cincinnati", year = "2020"},
+    {course = "BA in Physics", institution = "Zewail University", year = "2018"},
+]
+
+[extra.favicon]
+favicon_16x16 = "/img/favicons/android-chrome-192x192.png"
+favicon_32x32 = "/img/favicons/android-chrome-512x512.png"
+apple_touch_icon = "/img/favicons/apple-touch-icon.png"
+safari_pinned_tab = "/img/favicons/safari-pinned-tab.svg"
+webmanifest = "/img/favicons/site.webmanifest"
