@@ -30,8 +30,6 @@ Kylene was able to learn and apply significant HEP analysis skills during her su
 5. Development and optimization of a Boosted Decision Tree (BDT) using XGBoost to separate quark vs. gluon-initiated jets
 6. Application of statistical inference tools to determine statistical sensitivity to BSM effects in di-jet distributions
 
-There is also GitHub integration to automatically clone repositories and process them with the same options as above.
-
 ## Awards
 
 Kylene received the [Moritz Karbach Prize](https://lhcb.web.cern.ch/Collaboration_prizes/Moritz_Karbach_summer_student_prize.html) honorable mention, awarded to LHCb summer students who show excellent progression and collaboration-vital impacts during their time as summer students.
