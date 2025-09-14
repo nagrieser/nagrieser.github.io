@@ -7,7 +7,6 @@ This page link to resources that are not linked from elsewhere in order not to c
 
 ## Academic
 
-- [Teaching](/teaching/) - Courses and educational materials
 - [Awards](/awards) - My Academic and Research Awards
 
 ## Internal
