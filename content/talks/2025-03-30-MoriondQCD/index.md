@@ -14,7 +14,7 @@ authors = [ "N. Grieser" ]
 event = "Rencontres de Moriond, QCD and High Energy Interactions"
 location = "La Thuile, Italy"
 links = [
-    {url = "UB-Seminar2025.pdf", name = "Slides", icon = "slides"},
+    {url = "LHCb_QEE_MoriondQCD.pdf", name = "Slides", icon = "slides"},
     {url = "https://moriond.in2p3.fr/2025/QCD/", name = "Conference Website", icon = "web"},
 ]
 +++
