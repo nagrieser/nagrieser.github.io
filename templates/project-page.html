@@ -9,15 +9,12 @@
         <a href="{{ page.permalink }}">{{ page.title }}</a>
       </h1>
 
-      {% if page.extra.category %}
-      <div class="project-category">{{ page.extra.category }}</div>
-      {% endif %}
       
-      {% if page.extra.status %}
-      <div class="project-status status-{{ page.extra.status | lower }}">
-        {{ page.extra.status }}
-      </div>
-      {% endif %}
+{% if page.extra.status %}
+<div class="project-status status-{{ page.extra.status | lower }} font-bold text-blue-600">
+  {{ page.extra.status }}
+</div>
+{% endif %}
       
       {% if page.date %}
       <div class="project-date">
@@ -51,7 +48,7 @@
 
     {% if page.extra.technologies %}
     <div class="project-technologies-header">
-      <h3>Technologies Used</h3>
+      <h3>Skills Learned</h3>
       <div class="tech-tags">
         {% for tech in page.extra.technologies %}
         <span class="tech-tag">{{ tech }}</span>
