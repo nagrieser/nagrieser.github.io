@@ -77,7 +77,7 @@ navbar_items = [
 
 interests_items = [
     {name = "Particle Physics"},
-    {name = "Precision Electroweak and Higgs"},
+    {name = "Precision Electroweak and Higgs Measurements"},
     {name = "Machine Learning"},
     {name = "Scientific Computing"},
 
