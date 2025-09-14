@@ -14,7 +14,7 @@ authors = [ "N. Grieser" ]
 event = "Physics Seminar at the University at Buffalo"
 location = "Buffalo, New York, USA"
 links = [
-    {url = "UB-Seminar", name = "Slides", icon = "slides"},
+    {url = "UB-Seminar2025.pdf", name = "Slides", icon = "slides"},
     {url = "https://calendar.buffalo.edu/event/physics-seminar-recent-lhcb-results-in-precision-electroweak-physics-and-outlook-for-the-upcoming-run-3-data-set/", name = "Ad", icon = "link"},
 ]
 +++
