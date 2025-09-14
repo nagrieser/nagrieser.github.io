@@ -17,23 +17,25 @@ links = [
 ]
 +++
 
+Kylene Monaghan was an undergraduate Physics and Engineering student from Sewanee: University of the South in Sewanee Tenessee.  I had the privilege to mentor her for two months as part of the CERN Summer Student Program in 2025.
 
-A web-based tool that converts code files/folders or GitHub/Gitlab repositories into structured prompts for Large Language Models (LLMs), making it easier for developers to generate context-aware prompts for code-related tasks.
+## Activities during summer project
 
-## Usage
+Kylene was able to learn and apply significant HEP analysis skills during her summer project:
 
-Using `nrepo` is straightforward:
-
-1. Select your target LLM model and its token limit
-2. Choose whether to strip comments from code files
-3. Configure ignore patterns or use existing .gitignore rules
-4. Drag and drop your files/folders or use the file selector
-5. Review the processed output and copy to clipboard
+1. Monte-Carlo Simulation of Hard QCD di-jet production using Pythia, including additional BSM effects
+2. Jet Reconstruction using the FastJet package
+3. Large-scale data processing and visualization using ROOT's RDataframe class
+4. Understanding and manipulating parton distribution functions using the LHAPDF procedures
+5. Development and optimization of a Boosted Decision Tree (BDT) using XGBoost to separate quark vs. gluon-initiated jets
+6. Application of statistical inference tools to determine statistical sensitivity to BSM effects in di-jet distributions
 
 There is also GitHub integration to automatically clone repositories and process them with the same options as above.
 
-## Features
+## Awards
 
-- **Multi-Model Support**: Compatible with various LLMs, to help with token limits
-- **Comment Stripping**: Option to remove comments from code files for cleaner prompts
-- **Ignore Patterns**: Customizable ignore patterns to exclude unnecessary files
+Kylene received the [Moritz Karbach Prize](https://lhcb.web.cern.ch/Collaboration_prizes/Moritz_Karbach_summer_student_prize.html) honorable mention, awarded to LHCb summer students who show excellent progression and collaboration-vital impacts during their time as summer students.
+
+## Current Activity
+
+Kylene is currently finishing her senior year at Sewanee, and looks to pursue a PhD in either Physics or Engineering next year.
