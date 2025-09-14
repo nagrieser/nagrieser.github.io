@@ -18,7 +18,7 @@
       {%- endif -%}
     "/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>{{ last_updated | date(format="%+") }}</updated>
+    <updated>{{ now() | date(format="%+") }}</updated>
     <id>{{ feed_url | safe }}</id>
     {%- for page in pages %}
     <entry xml:lang="{{ page.lang }}">
