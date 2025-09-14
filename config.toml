@@ -8,7 +8,7 @@ description = "Nathan Grieser's Academic Website"
 default_language = "en"
 
 # The default author for pages
-author = "Nathan Grieser"
+author = "Dr. Nathan Grieser"
 
 # For overriding the default output directory `public`, set it to another value (e.g.: "docs")
 output_dir = "public"
