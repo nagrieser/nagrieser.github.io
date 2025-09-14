@@ -1,19 +1,19 @@
 +++
-title = "nrepo: Convert Code to LLM prompts"
-date = 2023-06-15
+title = "Kylene Monaghan: Dijet Angular Distribution Analysis in Search for New Physics"
+date = 2025-08-29
 weight = 1
 template = "project-page.html"
 
 [taxonomies]
-authors = ["M. Elashri"]
+authors = ["K. Monaghan"]
 
 [extra]
-category = "tools"
-status = "Active"
-technologies = ["Javescript", "HTML", "CSS"]
+category = "Skills:"
+status = "CERN Summer Student"
+technologies = ["Fundamental QCD", "Machine Learning", "Jet Reconstruction", "Statistical Inference"]
 links = [
-    { name = "GitHub Repository", url = "https://github.com/MohamedElashri/nrepo", external = true },
-    { name = "Production Website", url = "https://melashri.net/nrepo", external = true }
+    { name = "Final Publication", url = "https://repository.cern/records/5km79-dyd45", external = true },
+    { name = "Moritz Karbach Prize", url = "https://lhcb.web.cern.ch/Collaboration_prizes/Moritz_Karbach_summer_student_prize.html", external = true }
 ]
 +++
 
