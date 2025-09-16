@@ -29,4 +29,4 @@ Carrie was able to learn and apply significant HEP analysis skills during her su
 
 ## Current Activity
 
-Carrie is currently pursuing a Masters degree of Science and Instrumentation in physics at Stony Brook University.  She is also a participant in Ernest Courant Traineeship in Accelerator Science and Engineering.
+Carrie is currently pursuing a Masters degree of Science and Instrumentation in physics at Stony Brook University.  She is also a participant in the Ernest Courant Traineeship in Accelerator Science and Engineering.
