@@ -84,7 +84,7 @@ interests_items = [
 ]
 
 education_items = [
-    {course = "PhD in Experimental High Energy Physics", institution = "Univerity of Oklahoma", year = "2020"},
+    {course = "PhD in Experimental High Energy Physics", institution = "University of Oklahoma", year = "2020"},
     {course = "MA in Experimental High Energy Physics", institution = "University of Oklahoma", year = "2016"},
     {course = "BS in Physics and Astronomy", institution = "Ohio Northern University", year = "2013"},
 ]
