@@ -10,7 +10,7 @@ authors = ["C. Cox"]
 [extra]
 category = "Skills:"
 status = "CERN Summer Student"
-technologies = ["Electroweak Physics", "Beyond Standard Model Physics", "Machine Learning", "Statistical Inference"]
+technologies = ["Electroweak Physics", "Programming: Python", "Beyond Standard Model Physics", "Machine Learning", "Statistical Inference"]
 links = [
     { name = "Final Publication", url = "Study of t-Channel Production of Scalar Leptoquarks at LHCb and Central Acceptance Detector", external = true }
 ]
