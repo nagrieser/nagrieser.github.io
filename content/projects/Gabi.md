@@ -10,7 +10,7 @@ authors = ["G. Pesticci"]
 [extra]
 category = "Skills:"
 status = "CERN Summer Student and Undergraduate Capstone"
-technologies = ["Machine Learning", "Jet Reconstruction", "GPU Computing"]
+technologies = ["Programming: Python", "Machine Learning", "Jet Reconstruction", "GPU Computing"]
 links = [
     { name = "Final Publication", url = "https://repository.cern/records/03z8a-kkp71", external = true },
     { name = "US LHC Users Association Lightning Talk Prize", url = "https://indico.slac.stanford.edu/event/9140/timetable/#b-1270-awards-concluding-remar", external = true }
