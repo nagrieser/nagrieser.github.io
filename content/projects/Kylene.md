@@ -10,7 +10,7 @@ authors = ["K. Monaghan"]
 [extra]
 category = "Skills:"
 status = "CERN Summer Student"
-technologies = ["Fundamental QCD", "Machine Learning", "Jet Reconstruction", "Statistical Inference"]
+technologies = ["Fundamental QCD", "Programming: Python; C++", "Machine Learning", "Jet Reconstruction", "Statistical Inference"]
 links = [
     { name = "Final Publication", url = "https://repository.cern/records/5km79-dyd45", external = true },
     { name = "Moritz Karbach Prize", url = "https://lhcb.web.cern.ch/Collaboration_prizes/Moritz_Karbach_summer_student_prize.html", external = true }
