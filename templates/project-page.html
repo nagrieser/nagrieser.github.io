@@ -9,6 +9,12 @@
         <a href="{{ page.permalink }}">{{ page.title }}</a>
       </h1>
 
+      {% if page.extra.header_image %}
+      <div class="project-header-image">
+        <img src="{{ page.extra.header_image }}" alt="{% if page.extra.header_image_alt %}{{ page.extra.header_image_alt }}{% else %}{{ page.title }} header image{% endif %}" />
+      </div>
+      {% endif %}
+
       
 {% if page.extra.status %}
 <div class="project-status status-{{ page.extra.status | lower }} font-bold text-blue-600">
