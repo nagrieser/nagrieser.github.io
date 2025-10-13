@@ -10,7 +10,7 @@ authors = ["G. Pesticci"]
 [extra]
 category = "Skills:"
 status = "CERN Summer Student and Undergraduate Capstone"
-header_image = "img/Gabi.jpg"
+header_image = "/img/Gabi.jpg"
 header_image_alt = "Gabi presenting at the 2024 US-LUA Meeting"
 technologies = ["Programming: Python", "Machine Learning", "Jet Reconstruction", "GPU Computing"]
 links = [
