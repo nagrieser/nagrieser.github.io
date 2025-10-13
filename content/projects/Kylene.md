@@ -10,8 +10,8 @@ authors = ["K. Monaghan"]
 [extra]
 category = "Skills:"
 status = "CERN Summer Student"
-header_image: "/static/img/Kylene.jpg"
-header_image_alt: "Kylene presenting at the2025 CERN Summer Student poster session"
+header_image = "/static/img/Kylene.jpg"
+header_image_alt = "Kylene presenting at the2025 CERN Summer Student poster session"
 technologies = ["Fundamental QCD", "Programming: Python; C++", "Machine Learning", "Jet Reconstruction", "Statistical Inference"]
 links = [
     { name = "Final Publication", url = "https://repository.cern/records/5km79-dyd45", external = true },
