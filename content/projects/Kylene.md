@@ -10,7 +10,7 @@ authors = ["K. Monaghan"]
 [extra]
 category = "Skills:"
 status = "CERN Summer Student"
-header_image = "img/Kylene.jpg"
+header_image = "/img/Kylene.jpg"
 header_image_alt = "Kylene presenting at the2025 CERN Summer Student poster session"
 technologies = ["Fundamental QCD", "Programming: Python; C++", "Machine Learning", "Jet Reconstruction", "Statistical Inference"]
 links = [
