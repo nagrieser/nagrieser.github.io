@@ -7,6 +7,12 @@
     <h1 class="title">
       {% if section.extra.display_title %}{{ section.extra.display_title }}{% else %}{{ section.title }}{% endif %}
     </h1>
+
+    {% if section.extra.header_image %}
+    <div class="header-image">
+      <img src="{{ section.extra.header_image }}" alt="{% if section.extra.header_image_alt %}{{ section.extra.header_image_alt }}{% else %}Header image{% endif %}" />
+    </div>
+    {% endif %}
     
     {% if section.content %}
     <div class="section-description">
