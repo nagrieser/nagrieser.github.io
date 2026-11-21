@@ -1,5 +1,5 @@
 +++
-title = "Precision electroweak as a probe for new physics: An overview of recent LHCb electroweak results"
+title = "Probing the Electroweak Sector and Partonic Structure in the Forward Region with LHCb"
 description = "Invited Seminar for the Massachusetts Institute of Technology Lunch Seminar"
 date = "2025-10-28"
 [taxonomies]

@@ -99,6 +99,21 @@ education_items = [
     {course = "BS in Physics and Astronomy", institution = "Ohio Northern University", year = "2013"},
 ]
 
+# Highlight cards shown under the profile on the homepage (newest first).
+[[extra.highlights]]
+headline = "A W boson's spin remembers where it came from"
+title = "First measurement of the forward rapidity dependence of W boson transverse helicity fractions"
+date = "Sep 2026"
+role = "I proposed and led this analysis"
+image = "img/highlights/w-helicity.png"
+image_alt = "Measured W+ boson helicity fractions versus rapidity: the right-handed fraction falls and the left-handed fraction rises toward 1 as rapidity increases, matching MadGraph predictions."
+blurb = "As W⁺ bosons fly further forward, they flip from mostly right-handed to almost purely left-handed. LHCb mapped that flip for the first time, opening a new window on how quarks share the proton's momentum."
+links = [
+    { name = "Read the paper", url = "https://arxiv.org/abs/2609.22555" },
+    { name = "INSPIRE", url = "https://inspirehep.net/literature/3205477" },
+    { name = "Details", url = "/publications/2026-whelicity/" },
+]
+
 [extra.favicon]
 favicon_16x16 = "/img/favicons/android-chrome-192x192.png"
 favicon_32x32 = "/img/favicons/android-chrome-512x512.png"

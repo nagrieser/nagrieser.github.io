@@ -18,6 +18,29 @@
               {{macros::render_social_icons()}}
           </ul>
         </div>
+        {% if config.extra.highlights %}
+        <section class="highlights" aria-labelledby="highlights-heading">
+          <h2 id="highlights-heading" class="highlights-label"><span class="pulse-dot" aria-hidden="true"></span>Recent Results</h2>
+          {% for h in config.extra.highlights %}
+          <article class="highlight-card">
+            <a class="highlight-figure" href="{{ get_url(path=h.image) }}">
+              <img src="{{ get_url(path=h.image) }}" alt="{{ h.image_alt }}" loading="lazy">
+            </a>
+            <div class="highlight-body">
+              <p class="highlight-meta"><span class="highlight-badge">New</span>{{ h.date }}</p>
+              <h3 class="highlight-headline">{{ h.headline }}</h3>
+              <p class="highlight-blurb">{{ h.blurb }}</p>
+              {% if h.role %}<p class="highlight-role">{{ h.role }}</p>{% endif %}
+              <ul class="highlight-links">
+                {% for l in h.links %}
+                <li><a href="{{ l.url }}">{{ l.name }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </article>
+          {% endfor %}
+        </section>
+        {% endif %}
       </div>
       <div class="col col-lg-8">
           <article id="bio">
