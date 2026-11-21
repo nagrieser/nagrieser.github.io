@@ -25,7 +25,7 @@
         <title>{{ page.title }}</title>
         <published>{{ page.date | date(format="%+") }}</published>
         <updated>{{ page.updated | default(value=page.date) | date(format="%+") }}</updated>
-        {% for author in page.taxonomies.authors %}
+        {% for author in page.taxonomies.authors | default(value=[]) %}
         <author>
           <name>
             {{ author }}

@@ -1,7 +1,7 @@
 +++
 title = "Carrie Cox: Study of t-Channel Production of Scalar Leptoquarks at LHCb and Central Acceptance Detector"
 date = 2023-08-11
-weight = 1
+weight = 3
 template = "project-page.html"
 
 [taxonomies]
@@ -12,7 +12,7 @@ category = "Skills:"
 status = "CERN Summer Student"
 technologies = ["Electroweak Physics", "Programming: Python", "Beyond Standard Model Physics", "Machine Learning", "Statistical Inference"]
 links = [
-    { name = "Final Publication", url = "Study of t-Channel Production of Scalar Leptoquarks at LHCb and Central Acceptance Detector", external = true }
+    { name = "Final Publication", url = "https://repository.cern/records/tr7jk-1c047", external = true }
 ]
 +++
 

@@ -38,4 +38,4 @@ Kylene received the [Moritz Karbach Prize](https://lhcb.web.cern.ch/Collaboratio
 
 ## Current Activity
 
-Kylene is currently finishing her senior year at Sewanee, and looks to pursue a PhD in either Physics or Engineering next year.
+Kylene was named a 2026 Rhodes Scholar.

@@ -9,4 +9,4 @@ insert_anchor_links = "right"
 display_title = "Building Futures: A Collection of Student Work and Achievements"
 +++
 
-During my time at CERN I have had the great pleasure to design and execute a number of undergraduate research projects as part of the CERN Summer Student program.  Here you can find a brief summary of the students and projects, including skills that they were able to develop and awards that they received for their excellent work:
+I have designed and supervised three CERN Summer Student projects and co-supervised the research of doctoral students at the University of Cincinnati and at IHEP Beijing. Doctoral roles describe research co-supervision rather than primary supervisor-of-record appointments. Here you can find a brief summary of each student and project, including the skills they developed and the awards they received for their excellent work:

@@ -727,14 +727,16 @@ abbr[title] {
   font-weight: 400;
 }
 
-#background h2 {
+#background h2,
+#leadership h2 {
   font-weight: 400;
   margin-top: 1.5rem;
   font-size: 1.5rem;
   font-variant: normal;
 }
 
-#education ul {
+#education ul,
+#leadership ul {
   list-style: square;
 }
 

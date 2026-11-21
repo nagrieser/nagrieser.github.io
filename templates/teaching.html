@@ -6,21 +6,19 @@
     <h1 class="title">
       {{ section.title }}
     </h1>
+    {% if section.content %}<div class="section-description">{{ section.content | safe }}</div>{% endif %}
       {% for year, teaching in paginator.pages | group_by(attribute="year") %}
           <h2>{{ year }}</h2>
         <ul class="publist">
           {% for page in teaching %}
           {% if page.extra.start_date %}
-            {% set start_date = page.extra.start_date | date(format="%Y-%m") -%}
-            {% set end_date = page.extra.end_date | date(format="%Y-%m") -%}
+            {% set start_date = page.extra.start_date | date(format="%Y") -%}
+            {% set end_date = page.extra.end_date | date(format="%Y") -%}
           {% endif %}
           <li class="publist-item">
-            {% for author in page.taxonomies.authors %}
-            <a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a>
-            {% endfor %}
-            - <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+            <a href="{{ page.permalink | safe }}">{{ page.title }}</a>{% if page.extra.institution %}, {{ page.extra.institution }}{% endif %}
             {% if page.extra.start_date %}
-            <p><time datetime="{{start_date}}">{{ start_date }}</time> - <time datetime= "{{end_date}}">{{ end_date }}</time></p>
+            <p><time datetime="{{start_date}}">{{ start_date }}</time>&ndash;<time datetime= "{{end_date}}">{{ end_date }}</time></p>
             {% else %}
             <p><time datetime="{{page.date}}">{{ page.date }}</time></p>
             {% endif %}

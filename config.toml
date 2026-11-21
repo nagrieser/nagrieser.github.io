@@ -50,7 +50,7 @@ highlight_theme = "base16-ocean-dark"
 
 avatar = "img/Moriond.jpg"
 
-author = "Dr. N. Grieser"
+author = "N. Grieser"  # must match the author string used in publication/talk front matter so it gets bolded
 institution = "University of Cincinnati"
 role = "Postdoctoral Fellow"
 email = "ngrieser@cern.ch"
@@ -68,6 +68,7 @@ navbar_items = [
     { url = "/", name = "Home" },
     { url = "/publications/", name = "Publications" },
     { url = "/projects/", name = "Mentorship" },
+    { url = "/teaching/", name = "Teaching" },
     { url = "/talks/", name = "Talks" },
     { url = "/contact/", name = "Contact" },
     { url = "/cv/", name = "CV" },
@@ -81,6 +82,15 @@ interests_items = [
     {name = "Machine Learning"},
     {name = "Scientific Computing"},
 
+]
+
+leadership_items = [
+    {role = "Project Leader, LHCb Data Processing and Analysis", years = "2026–present"},
+    {role = "Convener, LHCb Quarks, Electroweak and Exotica", years = "2023–present"},
+    {role = "Co-chair, LHCb AI analysis-code forum", years = "2026–present"},
+    {role = "Co-convener, LPCC LHC Electroweak Working Group", years = "2024–present"},
+    {role = "Steering Board member, IRIS-HEP", years = "2025–present"},
+    {role = "Package leader, LHCb Upstream Tracker Detector Safety System", years = "2021–2024"},
 ]
 
 education_items = [

@@ -22,16 +22,13 @@
         {% endfor %}
     </ul>
     <ul class="pub-metadata">
-        <li><strong>Supervisor(s)</strong>: 
-        {% for author in page.taxonomies.authors %} 
-        <a href="{{ get_taxonomy_url(kind="authors", name=author) }}" class="pub-author">{{ author }}</a>
-        {% endfor %} </li>
-        <li><strong>Start Date</strong>: <time datetime="{{ page.extra.start_date }}">{{ page.extra.start_date }}</time></li>
-        <li><strong>End Date</strong>: <time datetime="{{ page.extra.end_date }}">{{ page.extra.end_date }}</time></li>
+        {% if page.extra.institution %}
+        <li><strong>Institution</strong>: {{ page.extra.institution }}</li>
+        {% endif %}
+        <li><strong>Dates</strong>: <time datetime="{{ page.extra.start_date }}">{{ page.extra.start_date | date(format="%B %Y") }}</time>&ndash;<time datetime="{{ page.extra.end_date }}">{{ page.extra.end_date | date(format="%B %Y") }}</time></li>
         {% if website_link %}
         <li><strong>Website</strong>: <a href="{{website_link}}">{{website_link}}</a> </li>
         {% endif %}
-        <li><strong>Language</strong>: <i>{{page.extra.language}}</i> </li>
         <li><strong>Tags</strong>: 
             {% for tag in page.taxonomies.tags %} 
                 {% if not loop.last %}
