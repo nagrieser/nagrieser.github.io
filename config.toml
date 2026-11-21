@@ -66,6 +66,7 @@ social_buttons = [
 # trailing slashes are needed for the aria-current page in header.html to work
 navbar_items = [
     { url = "/", name = "Home" },
+    { url = "/research/", name = "Research" },
     { url = "/publications/", name = "Publications" },
     { url = "/students/", name = "Students" },
     { url = "/teaching/", name = "Teaching" },

@@ -1818,3 +1818,59 @@ section.get-involved {
     font-size: 16px; /* Prevents zoom on iOS */
   }
 }
+
+/* Research page –––––––––––––––––––––––––––––––––––––– */
+.research { max-width: 46rem; }
+.research-lede {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text);
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.research-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 2.5rem;
+}
+.research-questions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem 0.45rem 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  background: var(--accent-bg);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+.research-questions a:hover { border-color: var(--accent); color: var(--accent); }
+.research-questions .q-num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+.research h2 {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  counter-increment: rq;
+}
+.research { counter-reset: rq; }
+.research h2::before {
+  content: counter(rq) ". ";
+  color: var(--accent);
+}
+.research h3 { margin-top: 1.75rem; }
+.research h2[id], .research h3[id] { scroll-margin-top: 1rem; }
