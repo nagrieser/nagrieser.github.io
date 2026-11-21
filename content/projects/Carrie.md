@@ -1,7 +1,7 @@
 +++
 title = "Carrie Cox: Study of t-Channel Production of Scalar Leptoquarks at LHCb and Central Acceptance Detector"
 date = 2023-08-11
-weight = 3
+weight = 4
 template = "project-page.html"
 
 [taxonomies]

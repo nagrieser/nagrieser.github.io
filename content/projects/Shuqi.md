@@ -1,7 +1,7 @@
 +++
 title = "Shuqi Sheng: LHCb Stripping Project and Upstream Tracker Commissioning"
 date = 2025-06-30
-weight = 5
+weight = 6
 template = "project-page.html"
 
 [taxonomies]

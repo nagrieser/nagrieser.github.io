@@ -1,7 +1,7 @@
 +++
 title = "Gabriella Pesticci: Jet Flavour Classification with a Graph Neural Network (GNN) at the LHCb"
 date = 2024-08-09
-weight = 2
+weight = 3
 template = "project-page.html"
 
 [taxonomies]

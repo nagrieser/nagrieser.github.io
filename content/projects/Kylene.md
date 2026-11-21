@@ -1,7 +1,7 @@
 +++
 title = "Kylene Monaghan: Dijet Angular Distribution Analysis in Search for New Physics"
 date = 2025-08-29
-weight = 1
+weight = 2
 template = "project-page.html"
 
 [taxonomies]
