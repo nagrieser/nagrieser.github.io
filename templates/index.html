@@ -47,6 +47,13 @@
             <h1>About</h1>
             {{section.content | safe }}
           </article>
+          <section id="explore" aria-labelledby="explore-heading">
+            <h2 id="explore-heading">Follow a Collision</h2>
+            <p class="explore-intro">Forty million times a second, LHCb has to decide what to keep. Follow one collision from the LHC beams through the real-time trigger and data processing, which I help design and lead, all the way to a physics analysis.</p>
+            <div class="explore-player" data-lhcb-story="dataflow" data-act="crossing" data-lang="en" data-title="Follow a collision through the LHCb data flow"></div>
+            <script src="https://explore-lhcb.web.cern.ch/embed.js" defer></script>
+            <p class="explore-credit">Interactive story from <a href="https://explore-lhcb.web.cern.ch/#/en/story/dataflow/crossing/bunches">Explore LHCb</a>.</p>
+          </section>
           {% if config.extra.leadership_items %}
           <div id="leadership">
             <h2>Scientific Leadership</h2>
