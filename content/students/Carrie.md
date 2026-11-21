@@ -3,11 +3,15 @@ title = "Carrie Cox: Study of t-Channel Production of Scalar Leptoquarks at LHCb
 date = 2023-08-11
 weight = 4
 template = "project-page.html"
+aliases = ["/projects/carrie/"]
 
 [taxonomies]
 authors = ["C. Cox"]
 
 [extra]
+name = "Carrie Cox"
+period = "CERN Summer Student, 2023"
+outcome = "Graduate study in accelerator science and engineering, Stony Brook University"
 category = "Skills:"
 status = "CERN Summer Student"
 technologies = ["Electroweak Physics", "Programming: Python", "Beyond Standard Model Physics", "Machine Learning", "Statistical Inference"]

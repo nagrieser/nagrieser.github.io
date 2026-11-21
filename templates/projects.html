@@ -21,6 +21,23 @@
     {% endif %}
 
     {% if section.pages %}
+    <section class="outcomes" aria-labelledby="outcomes-heading">
+      <div class="outcomes-header">
+        <h2 id="outcomes-heading">Where They Are Now</h2>
+        {% if section.extra.get_involved %}<a class="outcomes-cta" href="#get-involved">Interested in a project? &darr;</a>{% endif %}
+      </div>
+      <ul class="outcomes-list">
+        {% for page in section.pages %}{% if page.extra.outcome %}
+        <li class="outcome">
+          <a class="outcome-name" href="{{ page.permalink }}">{{ page.extra.name }}</a>
+          <span class="outcome-period">{{ page.extra.period }}</span>
+          <span class="outcome-now">{{ page.extra.outcome }}</span>
+        </li>
+        {% endif %}{% endfor %}
+      </ul>
+    </section>
+
+    <h2 class="projects-heading">Student Projects</h2>
     <div class="projects-grid">
       {% for page in section.pages %}
       <div class="project-card">
@@ -79,6 +96,13 @@
     </div>
     {% else %}
     <p>No projects found. Check back soon!</p>
+    {% endif %}
+
+    {% if section.extra.get_involved %}
+    <section id="get-involved" class="get-involved" aria-labelledby="get-involved-heading">
+      <h2 id="get-involved-heading">Get Involved</h2>
+      {{ section.extra.get_involved | markdown | safe }}
+    </section>
     {% endif %}
   </section>
 </article>

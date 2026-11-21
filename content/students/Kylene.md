@@ -3,11 +3,15 @@ title = "Kylene Monaghan: Dijet Angular Distribution Analysis in Search for New 
 date = 2025-08-29
 weight = 2
 template = "project-page.html"
+aliases = ["/projects/kylene/"]
 
 [taxonomies]
 authors = ["K. Monaghan"]
 
 [extra]
+name = "Kylene Monaghan"
+period = "CERN Summer Student, 2025"
+outcome = "2026 Rhodes Scholar"
 category = "Skills:"
 status = "CERN Summer Student"
 header_image = "/img/Kylene.jpg"

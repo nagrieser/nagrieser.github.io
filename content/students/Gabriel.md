@@ -3,11 +3,15 @@ title = "Gabriel Nowak: Measurement of the WW Production Cross-Section at LHCb"
 date = 2022-07-01
 weight = 5
 template = "project-page.html"
+aliases = ["/projects/gabriel/"]
 
 [taxonomies]
 authors = ["G. Nowak"]
 
 [extra]
+name = "Gabriel Nowak"
+period = "PhD co-supervision, University of Cincinnati, 2022–present"
+outcome = "PhD candidate, measuring the WW production cross-section at LHCb"
 category = "Skills:"
 status = "PhD Co-Supervision, University of Cincinnati"
 technologies = ["Electroweak Physics", "Diboson Production", "Programming: Python; C++", "Statistical Inference"]

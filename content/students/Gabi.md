@@ -3,11 +3,15 @@ title = "Gabriella Pesticci: Jet Flavour Classification with a Graph Neural Netw
 date = 2024-08-09
 weight = 3
 template = "project-page.html"
+aliases = ["/projects/gabi/"]
 
 [taxonomies]
 authors = ["G. Pesticci"]
 
 [extra]
+name = "Gabriella Pesticci"
+period = "CERN Summer Student and capstone, 2024–2025"
+outcome = "PhD student in particle physics, Michigan State University"
 category = "Skills:"
 status = "CERN Summer Student and Undergraduate Capstone"
 header_image = "/img/Gabi.jpg"

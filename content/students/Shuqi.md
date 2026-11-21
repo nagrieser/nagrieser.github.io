@@ -3,11 +3,15 @@ title = "Shuqi Sheng: LHCb Stripping Project and Upstream Tracker Commissioning"
 date = 2025-06-30
 weight = 6
 template = "project-page.html"
+aliases = ["/projects/shuqi/"]
 
 [taxonomies]
 authors = ["S. Sheng"]
 
 [extra]
+name = "Shuqi Sheng"
+period = "PhD co-supervision, IHEP Beijing, 2021–2025"
+outcome = "Postdoctoral researcher, EPFL"
 category = "Skills:"
 status = "PhD Co-Supervision, IHEP Beijing"
 technologies = ["Scientific Computing", "Large-Scale Data Processing", "Detector Commissioning", "Programming: Python; C++"]

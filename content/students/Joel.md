@@ -3,11 +3,15 @@ title = "Joel Moreno Calderón: Constraining SMEFT Wilson Coefficients Using LHC
 date = 2026-08-29
 weight = 1
 template = "project-page.html"
+aliases = ["/projects/joel/"]
 
 [taxonomies]
 authors = ["J. Moreno Calderón"]
 
 [extra]
+name = "Joel Moreno Calderón"
+period = "CERN Summer Student, 2026"
+outcome = "Post-baccalaureate researcher with me, continuing the SMEFT project"
 category = "Skills:"
 status = "CERN Summer Student and Post-Baccalaureate Researcher"
 technologies = ["Electroweak Physics", "Effective Field Theory", "Programming: Python", "Monte-Carlo Simulation", "Statistical Inference"]
