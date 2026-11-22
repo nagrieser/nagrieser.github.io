@@ -1874,3 +1874,18 @@ section.get-involved {
 }
 .research h3 { margin-top: 1.75rem; }
 .research h2[id], .research h3[id] { scroll-margin-top: 1rem; }
+.research-back { margin: 0 0 1rem; font-size: 0.95rem; }
+.research-back a { text-decoration: none; }
+.research-callout {
+  display: block;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  background: var(--accent-bg);
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.research-callout:hover { border-color: var(--accent); }
+.research-callout strong { color: var(--accent); margin-right: 0.4rem; }
